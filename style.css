@@ -434,7 +434,11 @@ li {
 /* Roadmap section toggle logic */
 .roadmap-content section {
   display: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
+
 .roadmap-content section.active {
   display: block;
+  opacity: 1;
 }
