@@ -2,58 +2,102 @@ function showTab(tabId, buttonElement) {
   const contents = document.querySelectorAll('.tab-content');
   const buttons = document.querySelectorAll('.tab-button');
 
-  // Hide all tab contents and deactivate all buttons
   contents.forEach(c => c.classList.remove('active'));
   buttons.forEach(b => b.classList.remove('active'));
 
-  // Show the selected tab content and activate the clicked button
   document.getElementById(tabId).classList.add('active');
   buttonElement.classList.add('active');
 }
 
 function setupRoadmap(navId) {
   const nav = document.getElementById(navId);
-  const items = nav?.querySelectorAll('li');
-  if (!items || items.length === 0) return;
+  if (!nav) return;
 
   const container = nav.closest('.content-wrapper')?.querySelector('.roadmap-content');
   if (!container) return;
 
   const sections = container.querySelectorAll('section');
+  const defaultImage = container.querySelector('.default-image');
+  const defaultSectionId = nav.querySelector('li.active')?.getAttribute('data-target');
 
-  // Add click event for roadmap items
-  items.forEach(item => {
-    item.addEventListener('click', () => {
-      // Activate clicked item
-      items.forEach(i => i.classList.remove('active'));
-      item.classList.add('active');
-
-      const targetId = item.getAttribute('data-target');
-
-      // Show corresponding section
-      sections.forEach(section => {
-        section.classList.toggle('active', section.id === targetId);
-      });
-
-      const targetElem = container.querySelector(`#${targetId}`);
-      if (targetElem) {
-        targetElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
+  // Show default active section, hide others
+  sections.forEach(section => {
+    if (section.id === defaultSectionId) {
+      section.classList.add('active');
+      section.style.display = 'block';
+    } else {
+      section.classList.remove('active');
+      section.style.display = 'none';
+    }
   });
 
-  // Optional: highlight section while scrolling
+  if (defaultImage) {
+    defaultImage.style.display = defaultSectionId ? 'none' : 'block';
+  }
+
+  const items = nav.querySelectorAll('li');
+
+  if (items.length > 0) {
+    // List-based nav (e.g. Services)
+    items.forEach(item => {
+      item.addEventListener('click', () => {
+        items.forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
+
+        const targetId = item.getAttribute('data-target');
+
+        sections.forEach(section => {
+          section.classList.remove('active');
+          section.style.display = 'none';
+        });
+
+        if (defaultImage) defaultImage.style.display = 'none';
+
+        const targetElem = container.querySelector(`#${targetId}`);
+        if (targetElem) {
+          targetElem.classList.add('active');
+          targetElem.style.display = 'block';
+          targetElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  } else if (nav.tagName === 'SELECT') {
+    // Dropdown-based nav (e.g. Home)
+    nav.addEventListener('change', () => {
+      const selectedValue = nav.value;
+
+      sections.forEach(section => {
+        section.classList.remove('active');
+        section.style.display = 'none';
+      });
+
+      if (!selectedValue) {
+        if (defaultImage) defaultImage.style.display = 'block';
+      } else {
+        if (defaultImage) defaultImage.style.display = 'none';
+
+        const targetElem = container.querySelector(`#${selectedValue}`);
+        if (targetElem) {
+          targetElem.classList.add('active');
+          targetElem.style.display = 'block';
+          targetElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    });
+  }
+
+  // Optional scroll sync (mostly for list-based nav)
   container.addEventListener('scroll', () => {
     let currentActive = null;
     const scrollPosition = container.scrollTop + 30;
 
     sections.forEach(section => {
-      if (section.offsetTop <= scrollPosition) {
+      if (section.offsetTop <= scrollPosition && section.style.display !== 'none') {
         currentActive = section.id;
       }
     });
 
-    if (currentActive) {
+    if (currentActive && items.length > 0) {
       items.forEach(i =>
         i.classList.toggle('active', i.getAttribute('data-target') === currentActive)
       );
@@ -82,8 +126,32 @@ function handleFormSubmit(event) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  setupRoadmap('home-roadmap');
-  setupRoadmap('services-roadmap');
+  setupRoadmap('home-roadmap-select');      // For Home tab (dropdown)
+  setupRoadmap('services-roadmap');         // For Services tab (ul li nav)
   setupRoadmap('projects-roadmap');
-  setupRoadmap('partners-roadmap'); // ✅ Added Partners roadmap here
+  setupRoadmap('partners-roadmap');
 });
+
+function toggleDropdown(id) {
+  const dropdown = document.getElementById(id);
+  dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+}
+
+function showHomeSection(sectionId) {
+  const container = document.getElementById('home-content');
+  const sections = container.querySelectorAll('section');
+  const defaultImage = container.querySelector('.default-image');
+
+  // Hide dropdown
+  document.getElementById('home-dropdown').style.display = 'none';
+
+  // Hide all
+  sections.forEach(s => s.style.display = 'none');
+  if (defaultImage) defaultImage.style.display = 'none';
+
+  const target = document.getElementById(sectionId);
+  if (target) {
+    target.style.display = 'block';
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
