@@ -114,7 +114,7 @@ body {
 
 .roadmap-nav ul li:hover,
 .roadmap-nav ul li.active {
-  background-color: #d0dce5;
+  background-color: var(--light-gray);
   color: var(--primary-blue);
   font-weight: 600;
 }
@@ -287,7 +287,7 @@ li {
   border-radius: 6px;
 }
 .roadmap-nav::-webkit-scrollbar-thumb {
-  background-color: var(--secondary-blue);
+  background-color: white;
   border-radius: 6px;
 }
 
