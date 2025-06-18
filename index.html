@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Verdaia Consulting Ltd.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+<body>
+  <div class="header">
+    <div class="logo-title">
+      <a href="index.html">
+      <img src="images/logowhite.jpg" alt="Company Logo" class="logo-img" />
+      </a>
+      <h1 class="company-title"></h1>
+    </div>
+
+    <div class="tabs">
+      <button class="tab-button active" onclick="showTab('home', this)">Home</button>
+      <button class="tab-button" onclick="showTab('services', this)">Services</button>
+      <button class="tab-button" onclick="showTab('team', this)">About Us</button>
+      <button class="tab-button" onclick="showTab('projects', this)">Projects</button>
+      <button class="tab-button" onclick="showTab('partners', this)">Partners</button>
+      <button class="tab-button" onclick="showTab('contact', this)">Contact</button>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- HOME TAB -->
+    <div id="home" class="tab-content active">
+      <div class="content-wrapper">
+        <nav class="roadmap-nav" id="home-roadmap">
+          <ul>
+            <li class="active" data-target="company-profile">Company Profile</li>
+            <li data-target="mission-vision">Mission & Vision</li>
+            <li data-target="core-values">Core Values</li>
+            <li data-target="pillars">Pillars</li>
+          </ul>
+        </nav>
+
+        <div class="roadmap-content" id="home-content">
+          <section id="company-profile" class="fade-in" style="display: block;">
+            <div class="postcard">
+              <p>
+                Research Innovation and Action for a Sustainable Future. 
+              </p>
+            </div>
+            <h3>Company Profile</h3>
+            <p>
+              <b>Specialized Research, Development & Consultancy (RDC) in the spaces of Life and Health Sciences, Engineering, Climate Change and the Environment</b><br>
+
+              while adopting emerging technologies such as Robotics, Aritficial Intelligence, and Technology Innovation.
+
+            </p>
+          </section>
+
+          
+          <section id="mission-vision" class="fade-in" style="margin-top:3rem;">
+            <h3>Vision</h3>
+            <p>
+              To be a leading global consulting firm, renowned for pioneering innovative solutions <br>
+              in Life & Health Sciences, Engineering, Climate Change & the Environment, driving transformative <br>
+              impacts that ensure a sustainable & resilient future for all.
+            </p>
+            <h3>Mission</h3>
+            <p>
+              To advance sustainable development through innovative research, <br>
+              development, & consultancy services that address complex challenges in Life & <br>
+              Health Sciences, Engineering, Climate Change & the Environment, while fostering global collaborations & empowering communities.
+            </p>
+          </section>
+
+          <section id="core-values" class="fade-in" style="margin-top:3rem;">
+            <h3>Our Core Values</h3>
+            <h4>Innovation</h4>
+            <p>
+              We are committed to fostering creativity & embracing new ideas to develop <br>
+              cutting -edge solutions.
+            </p>
+            <h4>Integrity</h4>
+            <p>
+              We conduct our business with the highest ethical standards, ensuring transparency & <br>
+              honesty in all our dealings.
+            </p>
+            <h4>Excellence</h4>
+            <p>
+              We strive for the highest levels of quality in our services, ensuring exceptional results <br>
+              for our clients & partners.
+            </p>
+            <h4>Sustainability</h4>
+            <p>
+              We are dedicated to promoting sustainable practices that protect & preserve<br>
+              the environment for future generations.
+            </p>
+            <h4>collaborations</h4>
+            <p>
+              We believe in the power of partnerships & work closely with diverse <br>
+              stakeholders to achieve common goals.
+            </p>
+          </section>
+
+          <section id="pillars" class="fade-in" style="margin-top:3rem; margin-bottom:3rem;">
+            <h3>Pillars</h3>
+            <h4>Developing Data-Driven, Scalable Health Initiatives</h4>
+            <p>
+              Integrating technology, research, and community-based <br>
+              interventions to enhance public health outcomes
+            </p>
+            <h4>Innovative Engineering Solutions</h4>
+            <h4>Artificial Intelligence (AI), Robotics and Drone Solutions</h4>
+            <br>
+            <h4>Sustainable Climate and Environmental Solutions</h4>
+            <br>
+            <h4>Advancing STEM Education</h4>
+            <p>
+              Through innovative approaches supported by project research, mentorship, accelerator,<br>
+              incubator and mobility programs
+            </p>
+            <p><b>Community Resilience and Improved Livelihood Initiatives for Vulnerable Groups,</b>
+              including women and youth
+            </p>
+          </section>
+        </div>
+      </div>
+    </div>
+
+   <div id="services" class="tab-content">
+  <div class="content-wrapper">
+    <nav class="roadmap-nav" id="services-roadmap">
+      <ul>
+        <li class="active" data-target="specialized-rd">Specialized R&D</li>
+        <li data-target="tech-integration">Technology Integration</li>
+        <li data-target="business-strategy">Business Strategy</li>
+        <li data-target="sustainability">Sustainability Consulting</li>
+        <li data-target="models-implementation">Models of Implementation</li>
+      </ul>
+    </nav>
+
+    <div class="roadmap-content" id="services-content">
+      <section id="specialized-rd" class="fade-in active">
+        <div class="postcard">
+          <h2>Our Comprehensive Services</h2>
+          <p>Tailored solutions for sustainable business transformation</p>
+        </div>
+        <h3>Specialized Research & Development</h3>
+        <ul>
+          <li><strong>Life & Health Sciences:</strong> Biomedical research, pharmaceutical development, and healthcare innovations</li>
+          <li><strong>Engineering Solutions:</strong> Sustainable infrastructure, renewable energy systems, and green technology</li>
+          <li><strong>Environmental Studies:</strong> Climate change mitigation, conservation strategies, and ecosystem management</li>
+        </ul>
+      </section>
+
+      <section id="tech-integration" class="fade-in">
+        <h3>Technology Integration</h3>
+        <ul>
+          <li>Artificial Intelligence and Machine Learning applications</li>
+          <li>Robotics and automation solutions</li>
+          <li>Data analytics and predictive modeling</li>
+          <li>IoT and smart systems implementation</li>
+        </ul>
+      </section>
+
+      <section id="business-strategy" class="fade-in">
+        <h3>Business Strategy Services</h3>
+        <h4>Operational Excellence</h4>
+        <ul>
+          <li>Think tank facilitation and strategic collaborations</li>
+          <li>Pop-up laboratory and testing platforms</li>
+          <li>Global expert network coordination</li>
+          <li>Corporate Social Responsibility planning</li>
+        </ul>
+
+        <h4>Revenue Optimization</h4>
+        <ul>
+          <li>Consultancy service models</li>
+          <li>Research grant acquisition and management</li>
+          <li>Training program development</li>
+          <li>Laboratory testing services</li>
+        </ul>
+      </section>
+
+      <section id="sustainability" class="fade-in">
+        <h3>Sustainability Consulting</h3>
+        <ul>
+          <li>Carbon footprint assessment and reduction strategies</li>
+          <li>Circular economy implementation</li>
+          <li>Green building certifications (LEED, BREEAM)</li>
+          <li>Environmental impact assessments</li>
+        </ul>
+      </section>
+
+      <section id="models-implementation" class="fade-in" style="margin-bottom:3rem;">
+        <h3>Models of Project Initiative Implementation</h3>
+        <ul style="line-height: 1.8; padding-left: 1rem;">
+          <li>Think Tank</li>
+          <li>Skills Development Programme – Graduates and Post-graduates</li>
+          <li>Internship Programme – Undergraduate Students</li>
+          <li>Associate Experts and Consultants</li>
+          <li>Academic Institution Affiliations</li>
+          <li>Consortium Partnerships</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</div>
+
+   <!-- TEAM TAB -->
+<div id="team" class="tab-content">
+  <section id="about-us" class="fade-in" style="margin-top:3rem;">
+    <h3>About Us</h3>
+    <p>
+      Verdaia Consulting Ltd. is a Zambian-based, globally connected consulting firm founded in 2024 <br> 
+      with a strategic presence in Zambia & the Netherlands. 
+
+      Specializing in Research, Development, & Consultancy, Verdaia Consulting Ltd. <br> 
+      delivers innovative & sustainable solutions across Life & Health Sciences, Engineering, Climate Change & the Environment.
+
+      The company earns its reputation for driving innovation & delivering impactful <br>
+      results through strategic partnerships & a commitment to sustainable development.
+    </p>
+    <h4>Founding Partners</h4>
+  </section>
+
+  <div class="team-members-container">
+    <div class="team-member">
+      <img src="images/cynthia.jpg" alt="Dr. Cynthia Lungu" class="profile-pic" />
+      <h4>Chief Executive Officer</h4>
+      <p>Dr. Cynthia Lungu MSc., PhD, </p>
+    </div>
+    <div class="team-member">
+      <img src="images/kelvin.jpg" alt="Dr. Kelvin Lungu" class="profile-pic" />
+      <h4>Managing Director</h4>
+      <p>Dr. Kelvin Lungu A. PhD, MEng., BEng.</p>
+    </div>
+  </div>
+</div>
+<!-- Projects Tab -->
+<div id="projects" class="tab-content">
+  <div class="content-wrapper">
+    
+    <!-- Roadmap Sidebar -->
+    <nav class="roadmap-nav" id="projects-roadmap">
+      <ul>
+        <li class="active" data-target="consultancy">Consultancy</li>
+        <li data-target="research">Research</li>
+        <li data-target="training">Training</li>
+        <li data-target="outreach">Outreach</li>
+      </ul>
+    </nav>
+
+    <!-- Roadmap Content -->
+    <div class="roadmap-content">
+      <section id="consultancy" class="active postcard">
+        <h2>Consultancy</h2>
+        <p>Explore consultancy projects including the GIZ D4D Technical Consultancy.</p>
+        <div class="projects-grid">
+          <div class="project-card">
+            <img src="images/projects/project1.png" alt="Waste Management" class="project-image" />
+            <h4>GIZ D4D Technical Consultancy</h4>
+            <p>A Baseline Survey to assess the informal waste collection landscape in Mansa, Zambia</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="research" class="postcard">
+        <h2>Research</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <h4>Ongoing Research Projects</h4>
+            <p>
+              Digital & Technology Solutions for Public Health & Sustainable Development
+            </p>
+            <br>
+            <p>
+              Spatial Epidemiology of Infectious Diseases
+            </p>
+            <br>
+            <p>
+              Drone Technology, Artificial Intelligence (AI) and Deep Learning Applications in <br>
+              Transportation Infrastructure Monitoring & Analysis
+            </p>
+            <br>
+            <p>
+              Eco-Friendly & Innovative Road Construction Materials
+            </p>
+            <br>
+            <p>
+              Drone Technology Applications in Sustainable Infrastructure, Public Health, Climate <br>
+              Action, Disaster Management, Wildlife Conservation, Natural Resource Management  <br>
+              (NRM) & Mineral Exploration
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="training" class="postcard">
+        <h2>Training</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <img src="images/projects/project2AI.png" alt="AI Training" class="project-image" />
+            <h4>AI & Drone Education Workshop</h4>
+            <p>Training students on cutting-edge technologies like Artificial Intelligence and Drones.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="outreach" class="postcard">
+        <h2>Outreach</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <img src="images/projects/project2chipata.png" alt="Community Outreach" class="project-image" />
+            <h4>Community STEM Activities</h4>
+            <p>Msekera Combined School outreach in Chipata, Eastern Zambia.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+   <!-- PARTNERS TAB -->
+<!-- Partners Tab -->
+<div id="partners" class="tab-content">
+  <div class="content-wrapper">
+    <!-- Roadmap Navigation -->
+    <nav class="roadmap-nav" id="partners-roadmap">
+      <ul>
+        <li class="active" data-target="academia">Academia</li>
+        <li data-target="foundations">Foundations</li>
+        <li data-target="ngos">NGOs</li>
+        <li data-target="industry">Industry</li>
+      </ul>
+    </nav>
+
+    <!-- Roadmap Content -->
+    <div class="roadmap-content" id="partners-content">
+      <!-- Section: Academia -->
+      <section id="academia" class="active">
+        <div class="postcard">
+          <h2>Academic Partnerships</h2>
+          <p>We collaborate with universities and research institutions to enhance our innovation and research capacity.</p>
+        </div>
+        <div class="partners-grid">
+          <div class="partner-card">
+            <img src="images/partners/unza.jpeg" alt="University of Zambia" class="partner-logo">
+            <h4>University of Zambia</h4>
+            <p>A key strategic partner in research, education and technology transfer initiatives.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Foundations -->
+      <section id="foundations">
+        <div class="postcard">
+          <h2>Foundations</h2>
+          <p>We are supported by global and local foundations committed to sustainable development.</p>
+        </div>
+        <div class="partners-grid">
+          <div class="partner-card">
+            <img src="images/partners/werobotics.png" alt="WeRobotics" class="partner-logo">
+            <h4>WeRobotics</h4>
+            <p>Through Flying Labs, WeRobotics supports capacity building and inclusive innovation in Zambia.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: NGOs -->
+      <section id="ngos">
+        <div class="postcard">
+          <h2>NGO Collaborations</h2>
+          <p>We work with civil society organizations to empower communities and deliver local impact.</p>
+        </div>
+        <div class="partners-grid">
+          <div class="partner-card">
+            <img src="images/partners/otherpartners.png" alt="NGO Partners" class="partner-logo">
+            <h4>Our Local NGO Partners</h4>
+            <p>Providing on-the-ground knowledge and reach to implement effective programs.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Industry -->
+      <section id="industry">
+        <div class="postcard">
+          <h2>Industry Collaborations</h2>
+          <p>We team up with private sector organizations to drive innovation, product development and service delivery.</p>
+        </div>
+        <div class="partners-grid">
+          <div class="partner-card">
+            <img src="images/partners/otherpartners.png" alt="Industry Partner" class="partner-logo">
+            <h4>Industry Partner</h4>
+            <p>Bridging the gap between innovation and practical implementation at scale.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+    <!-- CONTACT TAB -->
+    <div id="contact" class="tab-content">
+      <div class="postcard" style="background: var(--dark-green); color: white;">
+        <h2>Get in Touch</h2>
+        <p>We'd love to hear from you! Reach us through any of the channels below.</p>
+
+        <div class="contact-cards">
+          <div class="contact-card">
+            <h4>📞 Phone</h4>
+            <p>(+260) 979 268 676<br>(+31) 06 4116 9496</p>
+          </div>
+          <div class="contact-card">
+            <h4>📧 Email</h4>
+            <p><a href="c.lungu@verdaiaconsulting.com">c.lungu@verdaiaconsulting.com</a></p>
+          </div>
+          <div class="contact-card">
+            <h4>📍 Address</h4>
+            <p>HV/P/102, Hillview, Kafue, Zambia</p>
+          </div>
+        </div>
+
+        <h3 style="margin-top: 2rem;">Send Us a Message</h3>
+        <form class="contact-form" onsubmit="return handleFormSubmit(event)">
+          <input type="text" id="name" placeholder="Your Name" required />
+          <input type="email" id="email" placeholder="Your Email" required />
+          <textarea id="message" rows="4" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
