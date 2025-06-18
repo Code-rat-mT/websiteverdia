@@ -20,7 +20,6 @@
     <div class="tabs">
       <button class="tab-button active" onclick="showTab('home', this)">Home</button>
       <button class="tab-button" onclick="showTab('services', this)">Services</button>
-      <button class="tab-button" onclick="showTab('team', this)">About Us</button>
       <button class="tab-button" onclick="showTab('projects', this)">Projects</button>
       <button class="tab-button" onclick="showTab('partners', this)">Partners</button>
       <button class="tab-button" onclick="showTab('contact', this)">Contact</button>
@@ -28,100 +27,100 @@
   </div>
 
   <div class="container">
-
-   <!-- HOME TAB -->
+<!-- HOME TAB -->
 <div id="home" class="tab-content active">
   <div class="content-wrapper">
-    <nav class="roadmap-nav" id="home-roadmap">
-      <ul>
-        <li class="active" data-target="company-profile">Company Profile</li>
-        <li data-target="mission-vision">Mission & Vision</li>
-        <li data-target="core-values">Core Values</li>
-        <li data-target="pillars">Pillars</li>
-      </ul>
-    </nav>
 
+    <!-- Custom Dropdown Menu -->
+    <div class="dropdown-nav" style="position: relative; display: inline-block; margin-bottom: 2rem;">
+      <button class="tab-button dropdown-toggle" onclick="toggleDropdown('home-dropdown')">Home Menu</button>
+      <div id="home-dropdown" class="dropdown-content" style="display: none; position: absolute; background-color: white; border: 1px solid #ccc; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); z-index: 1;">
+        <a href="javascript:void(0)" onclick="showHomeSection('about-us')">About Us</a>
+        <a href="javascript:void(0)" onclick="showHomeSection('mission-vision')">Vision & Mission</a>
+        <a href="javascript:void(0)" onclick="showHomeSection('core-values')">Core Values</a>
+        <a href="javascript:void(0)" onclick="showHomeSection('pillars')">Pillars</a>
+      </div>
+    </div>
+
+    <!-- Home Content -->
     <div class="roadmap-content" id="home-content">
-      <section id="company-profile" class="fade-in active">
-        <div class="postcard">
-          <p>Research Innovation and Action for a Sustainable Future.</p>
-        </div>
-        <h3>Company Profile</h3>
+      <!-- Default image -->
+      <div class="default-image" style="text-align:center; margin: 3rem auto;">
+        <img src="images/home.jpg" alt="Welcome" style="max-width: 80%; height: auto; border-radius: 10px;" />
+      </div>
+
+      <!-- About Us Section -->
+      <section id="about-us" class="fade-in" style="display: none; margin-top: 3rem;">
+        <h3>About Us</h3>
         <p>
-          <b>Specialized Research, Development & Consultancy (RDC)</b> in the spaces of Life and Health Sciences, Engineering, Climate Change and the Environment<br>
-          while adopting emerging technologies such as Robotics, Artificial Intelligence, and Technology Innovation.
+          Verdaia Consulting Ltd. is a Zambian-based, globally connected consulting firm founded in 2024 <br> 
+          with a strategic presence in Zambia & the Netherlands. <br><br>
+          Specializing in Research, Development, & Consultancy, Verdaia Consulting Ltd. <br> 
+          delivers innovative & sustainable solutions across Life & Health Sciences, Engineering, Climate Change & the Environment.
+          The company earns its reputation for driving innovation & delivering impactful <br>
+          results through strategic partnerships & a commitment to sustainable development.
         </p>
+        <h4>Founding Partners</h4>
+        <div class="team-members-container" style="display: flex; gap: 2rem; margin-top: 1rem;">
+          <div class="team-member" style="text-align: center;">
+            <img src="images/cynthia.jpg" alt="Dr. Cynthia Lungu" style="width:150px; border-radius: 50%;" />
+            <h4>Chief Executive Officer</h4>
+            <p>Dr. Cynthia Lungu MSc., PhD</p>
+          </div>
+          <div class="team-member" style="text-align: center;">
+            <img src="images/kelvin.jpg" alt="Dr. Kelvin Lungu" style="width:150px; border-radius: 50%;" />
+            <h4>Managing Director</h4>
+            <p>Dr. Kelvin Lungu A. PhD, MEng., BEng.</p>
+          </div>
+        </div>
       </section>
 
-      <section id="mission-vision" class="fade-in">
+      <!-- Mission & Vision -->
+      <section id="mission-vision" class="fade-in" style="display: none; margin-top: 3rem;">
         <h3>Vision</h3>
-        <p>
-          To be a leading global consulting firm, renowned for pioneering innovative solutions<br>
-          in Life & Health Sciences, Engineering, Climate Change & the Environment, driving transformative<br>
+        <p>To be a leading global consulting firm, renowned for pioneering innovative solutions <br>
+          in Life & Health Sciences, Engineering, Climate Change & the Environment, driving transformative <br>
           impacts that ensure a sustainable & resilient future for all.
         </p>
         <h3>Mission</h3>
         <p>
-          To advance sustainable development through innovative research,<br>
-          development, & consultancy services that address complex challenges in Life &<br>
+          To advance sustainable development through innovative research, <br>
+          development, & consultancy services that address complex challenges in Life & <br>
           Health Sciences, Engineering, Climate Change & the Environment, while fostering global collaborations & empowering communities.
         </p>
       </section>
 
-      <section id="core-values" class="fade-in">
+      <!-- Core Values -->
+      <section id="core-values" class="fade-in" style="display: none; margin-top: 3rem;">
         <h3>Our Core Values</h3>
         <h4>Innovation</h4>
-        <p>
-          We are committed to fostering creativity & embracing new ideas to develop<br>
-          cutting-edge solutions.
-        </p>
+        <p>We are committed to fostering creativity & embracing new ideas to develop cutting-edge solutions.</p>
         <h4>Integrity</h4>
-        <p>
-          We conduct our business with the highest ethical standards, ensuring transparency &<br>
-          honesty in all our dealings.
-        </p>
+        <p>We conduct our business with the highest ethical standards, ensuring transparency & honesty in all our dealings.</p>
         <h4>Excellence</h4>
-        <p>
-          We strive for the highest levels of quality in our services, ensuring exceptional results<br>
-          for our clients & partners.
-        </p>
+        <p>We strive for the highest levels of quality in our services, ensuring exceptional results for our clients & partners.</p>
         <h4>Sustainability</h4>
-        <p>
-          We are dedicated to promoting sustainable practices that protect & preserve<br>
-          the environment for future generations.
-        </p>
+        <p>We are dedicated to promoting sustainable practices that protect & preserve the environment for future generations.</p>
         <h4>Collaborations</h4>
-        <p>
-          We believe in the power of partnerships & work closely with diverse<br>
-          stakeholders to achieve common goals.
-        </p>
+        <p>We believe in the power of partnerships & work closely with diverse stakeholders to achieve common goals.</p>
       </section>
 
-      <section id="pillars" class="fade-in">
+      <!-- Pillars -->
+      <section id="pillars" class="fade-in" style="display: none; margin-top: 3rem; margin-bottom: 3rem;">
         <h3>Pillars</h3>
         <h4>Developing Data-Driven, Scalable Health Initiatives</h4>
-        <p>
-          Integrating technology, research, and community-based<br>
-          interventions to enhance public health outcomes.
-        </p>
+        <p>Integrating technology, research, and community-based interventions to enhance public health outcomes</p>
         <h4>Innovative Engineering Solutions</h4>
-        <h4>Artificial Intelligence (AI), Robotics and Drone Solutions</h4>
-        <br>
-        <h4>Sustainable Climate and Environmental Solutions</h4>
-        <br>
+        <h4>Artificial Intelligence (AI), Robotics and Drone Solutions</h4><br>
+        <h4>Sustainable Climate and Environmental Solutions</h4><br>
         <h4>Advancing STEM Education</h4>
-        <p>
-          Through innovative approaches supported by project research, mentorship, accelerator,<br>
-          incubator and mobility programs.
-        </p>
-        <p><b>Community Resilience and Improved Livelihood Initiatives for Vulnerable Groups,</b>
-          including women and youth.
-        </p>
+        <p>Through innovative approaches supported by project research, mentorship, accelerator, incubator and mobility programs</p>
+        <p><b>Community Resilience and Improved Livelihood Initiatives for Vulnerable Groups,</b> including women and youth</p>
       </section>
     </div>
   </div>
 </div>
-
+<!--Services-->
    <div id="services" class="tab-content">
   <div class="content-wrapper">
     <nav class="roadmap-nav" id="services-roadmap">
@@ -202,36 +201,6 @@
   </div>
 </div>
 
-   <!-- TEAM TAB -->
-<div id="team" class="tab-content">
-  <section id="about-us" class="fade-in" style="margin-top:3rem;">
-    <h3>About Us</h3>
-    <p>
-      Verdaia Consulting Ltd. is a Zambian-based, globally connected consulting firm founded in 2024 <br> 
-      with a strategic presence in Zambia & the Netherlands. 
-
-      Specializing in Research, Development, & Consultancy, Verdaia Consulting Ltd. <br> 
-      delivers innovative & sustainable solutions across Life & Health Sciences, Engineering, Climate Change & the Environment.
-
-      The company earns its reputation for driving innovation & delivering impactful <br>
-      results through strategic partnerships & a commitment to sustainable development.
-    </p>
-    <h4>Founding Partners</h4>
-  </section>
-
-  <div class="team-members-container">
-    <div class="team-member">
-      <img src="images/cynthia.jpg" alt="Dr. Cynthia Lungu" class="profile-pic" />
-      <h4>Chief Executive Officer</h4>
-      <p>Dr. Cynthia Lungu MSc., PhD, </p>
-    </div>
-    <div class="team-member">
-      <img src="images/kelvin.jpg" alt="Dr. Kelvin Lungu" class="profile-pic" />
-      <h4>Managing Director</h4>
-      <p>Dr. Kelvin Lungu A. PhD, MEng., BEng.</p>
-    </div>
-  </div>
-</div>
 <!-- Projects Tab -->
 <div id="projects" class="tab-content">
   <div class="content-wrapper">
@@ -248,9 +217,7 @@
 
     <!-- Roadmap Content -->
     <div class="roadmap-content">
-      <section id="consultancy" class="active postcard">
-        <h2>Consultancy</h2>
-        <p>Explore consultancy projects including the GIZ D4D Technical Consultancy.</p>
+      <section id="consultancy" class="active postcard" style = "display: block;">
         <div class="projects-grid">
           <div class="project-card">
             <img src="images/projects/project1.png" alt="Waste Management" class="project-image" />
@@ -261,7 +228,6 @@
       </section>
 
       <section id="research" class="postcard">
-        <h2>Research</h2>
         <div class="projects-grid">
           <div class="project-card">
             <h4>Ongoing Research Projects</h4>
@@ -292,7 +258,6 @@
       </section>
 
       <section id="training" class="postcard">
-        <h2>Training</h2>
         <div class="projects-grid">
           <div class="project-card">
             <img src="images/projects/project2AI.png" alt="AI Training" class="project-image" />
@@ -303,7 +268,6 @@
       </section>
 
       <section id="outreach" class="postcard">
-        <h2>Outreach</h2>
         <div class="projects-grid">
           <div class="project-card">
             <img src="images/projects/project2chipata.png" alt="Community Outreach" class="project-image" />
@@ -333,7 +297,7 @@
     <!-- Roadmap Content -->
     <div class="roadmap-content" id="partners-content">
       <!-- Section: Academia -->
-      <section id="academia" class="active">
+      <section id="academia" class="active" style = "display: block;">
         <div class="postcard">
           <h2>Academic Partnerships</h2>
           <p>We collaborate with universities and research institutions to enhance our innovation and research capacity.</p>
@@ -342,7 +306,6 @@
           <div class="partner-card">
             <img src="images/partners/unza.jpeg" alt="University of Zambia" class="partner-logo">
             <h4>University of Zambia</h4>
-            <p>A key strategic partner in research, education and technology transfer initiatives.</p>
           </div>
         </div>
       </section>
@@ -407,7 +370,7 @@
           </div>
           <div class="contact-card">
             <h4>📧 Email</h4>
-            <p><a href="c.lungu@verdaiaconsulting.comc style="color:rgb(22, 27, 50)">c.lungu@verdaiaconsulting.com</a></p>
+            <p><a href="c.lungu@verdaiaconsulting.com" style="color:rgb(22, 27, 50)">c.lungu@verdaiaconsulting.com</a></p>
           </div>
           <div class="contact-card">
             <h4>📍 Address</h4>
