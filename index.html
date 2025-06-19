@@ -27,109 +27,109 @@
   </div>
 
   <div class="container">
-    <!-- HOME TAB -->
-    <div id="home" class="tab-content active">
-      <div class="content-wrapper">
-        <!-- Custom Dropdown Menu -->
-       <button class="tab-button dropdown-toggle" onclick="toggleDropdown('home-dropdown')" title="Home Menu">
-    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16" style="vertical-align: middle; margin-right: 6px;">
+   <!-- HOME TAB -->
+<div id="home" class="tab-content active">
+  <div class="content-wrapper">
+    <!-- Horizontal layout: dropdown left, content right -->
+    <div class="home-layout" style="display: flex; align-items: flex-start; gap: 2rem;">
+
+      <!-- Dropdown Navigation -->
+      <div class="dropdown-nav" style="position: relative; display: inline-block; margin-bottom: 2rem;">
+  <button class="tab-button dropdown-toggle" onclick="toggleDropdown('home-dropdown')" title="Home">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16" style="vertical-align: middle;">
       <path d="M8 3.293l6 6V13a1 1 0 0 1-1 1h-3v-3H6v3H3a1 1 0 0 1-1-1v-3.707l6-6z"/>
       <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l7 7a1 1 0 0 1-1.414 1.414L8 3.414 1.707 9.914A1 1 0 0 1 .293 8.5l7-7z"/>
     </svg>
   </button>
 
-
-          <div id="home-dropdown" class="dropdown-content" style="display: none; position: absolute; background-color: white; border: 1px solid #ccc; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); z-index: 1;">
-            <a href="javascript:void(0)" onclick="showHomeSection('about-us')">About Us</a>
-            <a href="javascript:void(0)" onclick="showHomeSection('mission-vision')">Vision & Mission</a>
-            <a href="javascript:void(0)" onclick="showHomeSection('core-values')">Core Values</a>
-            <a href="javascript:void(0)" onclick="showHomeSection('pillars')">Pillars</a>
-          </div>
-        </div>
-
-        <!-- Home Content -->
-        <div class="roadmap-content" id="home-content">
-          <!-- Default image -->
-          <div class="default-image" style="text-align:center; margin: 3rem auto;">
-            <img src="images/home.png" alt="Welcome" style="max-width: 80%; height: auto; border-radius: 10px;" />
-            <p style="font-size: 30px;"><i>
-               Research, Innovation and Action for a Sustainable Future
-            </i></p>
-          </div>
-
-          <!-- About Us Section -->
-          <section id="about-us" class="fade-in" style="display: none; margin-top: 3rem;">
-            <h3>About Us</h3>
-            <p>
-              Verdaia Consulting Ltd. is a Zambian-based, globally connected consulting firm founded in 2024<br />
-              with a strategic presence in Zambia & the Netherlands.<br /><br />
-              Specializing in Research, Development, & Consultancy, Verdaia Consulting Ltd.<br />
-              delivers innovative & sustainable solutions across Life & Health Sciences, Engineering, Climate Change & the Environment.
-            </p>
-            <h4>Founding Partners</h4>
-            <div class="team-members-container" style="display: flex; gap: 2rem; margin-top: 1rem;">
-              <div class="team-member" style="text-align: center;">
-                <img src="images/cynthia.png" alt="Dr. Cynthia Lungu" style="width:150px; border-radius: 50%;" />
-                <h4>Chief Executive Officer</h4>
-                <p> Dr. Cynthia Lungu, MSc, PhD
-                </p>
-                <p><i>The Hague, Netherlands</i></p>
-              </div>
-              <div class="team-member" style="text-align: center;">
-                <img src="images/kelvin.png" alt="Dr. Kelvin Lungu" style="width:150px; border-radius: 50%;" />
-                <h4>Managing Director</h4>
-                <p>Dr. Kelvin A. Lungu, MEng, PhD</p>
-                <p><i>Lusaka, Zambia</i></p>
-              </div>
-            </div>
-          </section>
-
-          <!-- Mission & Vision -->
-          <section id="mission-vision" class="fade-in" style="display: none; margin-top: 3rem;">
-            <h3>Vision</h3>
-            <p>
-              To be a leading global consulting firm, renowned for pioneering innovative solutions<br />
-              in Life & Health Sciences, Engineering, Climate Change & the Environment, driving transformative<br />
-              impacts that ensure a sustainable & resilient future for all.
-            </p>
-            <h3>Mission</h3>
-            <p>
-              To advance sustainable development through innovative research,<br />
-              development, & consultancy services that address complex challenges in Life &<br />
-              Health Sciences, Engineering, Climate Change & the Environment, while fostering global collaborations & empowering communities.
-            </p>
-          </section>
-
-          <!-- Core Values -->
-          <section id="core-values" class="fade-in" style="display: none; margin-top: 3rem;">
-            <h3>Our Core Values</h3>
-            <h4>Innovation</h4>
-            <p>We are committed to fostering creativity & embracing new ideas to develop cutting-edge solutions.</p>
-            <h4>Integrity</h4>
-            <p>We conduct our business with the highest ethical standards, ensuring transparency & honesty in all our dealings.</p>
-            <h4>Excellence</h4>
-            <p>We strive for the highest levels of quality in our services, ensuring exceptional results for our clients & partners.</p>
-            <h4>Sustainability</h4>
-            <p>We are dedicated to promoting sustainable practices that protect & preserve the environment for future generations.</p>
-            <h4>Collaborations</h4>
-            <p>We believe in the power of partnerships & work closely with diverse stakeholders to achieve common goals.</p>
-          </section>
-
-          <!-- Pillars -->
-          <section id="pillars" class="fade-in" style="display: none; margin-top: 3rem; margin-bottom: 3rem;">
-            <h3>Pillars</h3>
-            <h4>Developing Data-Driven, Scalable Health Initiatives</h4>
-            <p>Integrating technology, research, and community-based interventions to enhance public health outcomes</p>
-            <h4>Innovative Engineering Solutions</h4>
-            <h4>Artificial Intelligence (AI), Robotics and Drone Solutions</h4>
-            <h4>Sustainable Climate and Environmental Solutions</h4>
-            <h4>Advancing STEM Education</h4>
-            <p>Through innovative approaches supported by project research, mentorship, accelerator, incubator and mobility programs</p>
-            <h4>Community Resilience and Improved Livelihood Initiatives for Vulnerable Groups</h4> <p> including women and youth</p>
-          </section>
+  <div id="home-dropdown" class="dropdown-content" style="display: none; position: absolute; background-color: white; border: 1px solid #ccc; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); z-index: 1;">
+          <a href="javascript:void(0)" onclick="showHomeSection('about-us')" style="display: block; padding: 0.5rem 1rem; text-decoration: none; color: #333;">About Us</a>
+          <a href="javascript:void(0)" onclick="showHomeSection('mission-vision')" style="display: block; padding: 0.5rem 1rem; text-decoration: none; color: #333;">Vision & Mission</a>
+          <a href="javascript:void(0)" onclick="showHomeSection('core-values')" style="display: block; padding: 0.5rem 1rem; text-decoration: none; color: #333;">Core Values</a>
+          <a href="javascript:void(0)" onclick="showHomeSection('pillars')" style="display: block; padding: 0.5rem 1rem; text-decoration: none; color: #333;">Pillars</a>
         </div>
       </div>
+
+      <!-- Content Area -->
+      <div class="roadmap-content" id="home-content" style="flex-grow: 1;">
+
+        <!-- Default image -->
+        <div class="default-image" style="text-align:center; margin: 3rem auto;">
+          <img src="images/home.png" alt="Welcome" style="max-width: 80%; height: auto; border-radius: 10px;" />
+          <p style="font-size: 30px;"><i>Research, Innovation and Action for a Sustainable Future</i></p>
+        </div>
+
+        <!-- Sections -->
+        <section id="about-us" class="fade-in" style="display: none; margin-top: 3rem;">
+          <h3>About Us</h3>
+          <p>
+            Verdaia Consulting Ltd. is a Zambian-based, globally connected consulting firm founded in 2024<br />
+            with a strategic presence in Zambia & the Netherlands.<br /><br />
+            Specializing in Research, Development, & Consultancy, Verdaia Consulting Ltd.<br />
+            delivers innovative & sustainable solutions across Life & Health Sciences, Engineering, Climate Change & the Environment.
+          </p>
+          <h4>Founding Partners</h4>
+          <div class="team-members-container" style="display: flex; gap: 2rem; margin-top: 1rem;">
+            <div class="team-member" style="text-align: center;">
+              <img src="images/cynthia.png" alt="Dr. Cynthia Lungu" style="width:150px; border-radius: 50%;" />
+              <h4>Chief Executive Officer</h4>
+              <p>Dr. Cynthia Lungu, MSc, PhD</p>
+              <p><i>The Hague, Netherlands</i></p>
+            </div>
+            <div class="team-member" style="text-align: center;">
+              <img src="images/kelvin.png" alt="Dr. Kelvin Lungu" style="width:150px; border-radius: 50%;" />
+              <h4>Managing Director</h4>
+              <p>Dr. Kelvin A. Lungu, MEng, PhD</p>
+              <p><i>Lusaka, Zambia</i></p>
+            </div>
+          </div>
+        </section>
+
+        <section id="mission-vision" class="fade-in" style="display: none; margin-top: 3rem;">
+          <h3>Vision</h3>
+          <p>
+            To be a leading global consulting firm, renowned for pioneering innovative solutions<br />
+            in Life & Health Sciences, Engineering, Climate Change & the Environment, driving transformative<br />
+            impacts that ensure a sustainable & resilient future for all.
+          </p>
+          <h3>Mission</h3>
+          <p>
+            To advance sustainable development through innovative research,<br />
+            development, & consultancy services that address complex challenges in Life &<br />
+            Health Sciences, Engineering, Climate Change & the Environment, while fostering global collaborations & empowering communities.
+          </p>
+        </section>
+
+        <section id="core-values" class="fade-in" style="display: none; margin-top: 3rem;">
+          <h3>Our Core Values</h3>
+          <h4>Innovation</h4>
+          <p>We are committed to fostering creativity & embracing new ideas to develop cutting-edge solutions.</p>
+          <h4>Integrity</h4>
+          <p>We conduct our business with the highest ethical standards, ensuring transparency & honesty in all our dealings.</p>
+          <h4>Excellence</h4>
+          <p>We strive for the highest levels of quality in our services, ensuring exceptional results for our clients & partners.</p>
+          <h4>Sustainability</h4>
+          <p>We are dedicated to promoting sustainable practices that protect & preserve the environment for future generations.</p>
+          <h4>Collaborations</h4>
+          <p>We believe in the power of partnerships & work closely with diverse stakeholders to achieve common goals.</p>
+        </section>
+
+        <section id="pillars" class="fade-in" style="display: none; margin-top: 3rem; margin-bottom: 3rem;">
+          <h3>Pillars</h3>
+          <h4>Developing Data-Driven, Scalable Health Initiatives</h4>
+          <p>Integrating technology, research, and community-based interventions to enhance public health outcomes</p>
+          <h4>Innovative Engineering Solutions</h4>
+          <h4>Artificial Intelligence (AI), Robotics and Drone Solutions</h4>
+          <h4>Sustainable Climate and Environmental Solutions</h4>
+          <h4>Advancing STEM Education</h4>
+          <p>Through innovative approaches supported by project research, mentorship, accelerator, incubator and mobility programs</p>
+          <h4>Community Resilience and Improved Livelihood Initiatives for Vulnerable Groups,</h4>
+          <p> including women and youth</p>
+        </section>
+      </div>
     </div>
+  </div>
+</div>
 
     <!-- SERVICES TAB -->
     <div id="services" class="tab-content">
@@ -272,7 +272,8 @@
           <section id="training" class="postcard" style="display:none;">
             <div class="projects-grid">
               <div class="postcard">
-                <h4>AI and Drone Education Student Training Workshop Lusaka, Zambia - 2025</h4>
+                <h4>AI and Drone Education </h4>
+                <p><i>Student Training Workshop Lusaka, Zambia - 2025</i></p>
               </div>
               <div class="project-card">
                 <img src="images/projects/training1.jpg" alt="AI Training" class="project-image" />
