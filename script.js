@@ -5,8 +5,13 @@ function showTab(tabId, buttonElement) {
   contents.forEach(c => c.classList.remove('active'));
   buttons.forEach(b => b.classList.remove('active'));
 
-  document.getElementById(tabId).classList.add('active');
-  buttonElement.classList.add('active');
+  const targetTab = document.getElementById(tabId);
+  if (targetTab) {
+    targetTab.classList.add('active');
+  }
+  if (buttonElement) {
+    buttonElement.classList.add('active');
+  }
 }
 
 function setupRoadmap(navId) {
@@ -20,7 +25,7 @@ function setupRoadmap(navId) {
   const defaultImage = container.querySelector('.default-image');
   const defaultSectionId = nav.querySelector('li.active')?.getAttribute('data-target');
 
-  // Show default active section, hide others
+  // Initial display
   sections.forEach(section => {
     if (section.id === defaultSectionId) {
       section.classList.add('active');
@@ -38,7 +43,7 @@ function setupRoadmap(navId) {
   const items = nav.querySelectorAll('li');
 
   if (items.length > 0) {
-    // List-based nav (e.g. Services)
+    // List-based nav
     items.forEach(item => {
       item.addEventListener('click', () => {
         items.forEach(i => i.classList.remove('active'));
@@ -62,7 +67,7 @@ function setupRoadmap(navId) {
       });
     });
   } else if (nav.tagName === 'SELECT') {
-    // Dropdown-based nav (e.g. Home)
+    // Dropdown nav
     nav.addEventListener('change', () => {
       const selectedValue = nav.value;
 
@@ -86,7 +91,7 @@ function setupRoadmap(navId) {
     });
   }
 
-  // Optional scroll sync (mostly for list-based nav)
+  // Optional scroll sync (if needed)
   container.addEventListener('scroll', () => {
     let currentActive = null;
     const scrollPosition = container.scrollTop + 30;
@@ -108,6 +113,34 @@ function setupRoadmap(navId) {
   });
 }
 
+// Toggle dropdown visibility
+function toggleDropdown(id) {
+  const dropdown = document.getElementById(id);
+  dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+}
+
+// Show Home section content beside dropdown
+function showHomeSection(sectionId) {
+  const container = document.getElementById('home-content');
+  const sections = container.querySelectorAll('section');
+  const defaultImage = container.querySelector('.default-image');
+
+  // Hide all sections and default image
+  sections.forEach(s => s.style.display = 'none');
+  if (defaultImage) defaultImage.style.display = 'none';
+
+  document.getElementById('home-dropdown').style.display = 'none';
+
+  const target = document.getElementById(sectionId);
+  if (target) {
+    target.style.display = 'block';
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  } else {
+    if (defaultImage) defaultImage.style.display = 'block';
+  }
+}
+
+// Contact form submit handler
 function handleFormSubmit(event) {
   event.preventDefault();
 
@@ -125,33 +158,13 @@ function handleFormSubmit(event) {
   return false;
 }
 
+// Initialize setup on DOM ready
 document.addEventListener('DOMContentLoaded', () => {
-  setupRoadmap('home-roadmap-select');      // For Home tab (dropdown)
-  setupRoadmap('services-roadmap');         // For Services tab (ul li nav)
-  setupRoadmap('projects-roadmap');
-  setupRoadmap('partners-roadmap');
-});
+  ['home-roadmap-select', 'services-roadmap', 'projects-roadmap', 'partners-roadmap'].forEach(setupRoadmap);
 
-function toggleDropdown(id) {
-  const dropdown = document.getElementById(id);
-  dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-}
-
-function showHomeSection(sectionId) {
-  const container = document.getElementById('home-content');
-  const sections = container.querySelectorAll('section');
-  const defaultImage = container.querySelector('.default-image');
-
-  // Hide dropdown
-  document.getElementById('home-dropdown').style.display = 'none';
-
-  // Hide all
-  sections.forEach(s => s.style.display = 'none');
-  if (defaultImage) defaultImage.style.display = 'none';
-
-  const target = document.getElementById(sectionId);
-  if (target) {
-    target.style.display = 'block';
-    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  const defaultTab = document.querySelector('.tab-button.active');
+  if (defaultTab) {
+    const tabId = defaultTab.getAttribute('data-tab') || defaultTab.getAttribute('onclick')?.match(/'([^']+)'/)?.[1];
+    if (tabId) showTab(tabId, defaultTab);
   }
-}
+});
